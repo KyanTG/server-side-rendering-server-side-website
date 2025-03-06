@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+}
+
+header {
+    background-color: var(--veronica-color-secondary);
+}
+
+.programma-sec {
+
+    .programma {
+        background-color: var(--veronica-color-main);
+        width: 295px;
+    }
+}
