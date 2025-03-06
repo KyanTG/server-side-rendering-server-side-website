@@ -45,3 +45,10 @@ body {
         width: 295px;
     }
 }
+
+.home {
+    font-size: 40px;
+    padding: 10px;
+    color: var(--veronica-color-white);
+    background-color: var(--veronica-color-secondary);
+}

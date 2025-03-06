@@ -48,25 +48,20 @@ app.engine('liquid', engine.express());
 // Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
 app.set('views', './views')
 
-// Maak een GET route voor de index (meestal doe je dit in de root, als /)
+// homepage
 app.get('/', async function (request, response) {
 
 
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
    response.render('homepage.liquid', {stations: RadioJSON.data} )
 })
 
-// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
-// Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
-  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
-  // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
+
   response.redirect(303, '/')
 })
 
 
-
+// veronica page
 app.get('/veronica', async function (request, response) {
 
   const ShowVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_show/?sort=radiostation')
