@@ -7,15 +7,30 @@ import { Liquid } from 'liquidjs';
 
 
 console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
+
+
 // Doe een fetch naar de data die je nodig hebt
 // const apiResponse = await fetch('...')
 
+const Radio = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations')
+const Showtime = await fetch('https://fdnd-agency.directus.app/items/mh_shows')
+const Show = await fetch('https://fdnd-agency.directus.app/items/mh_show')
+const Presentators = await fetch('https://fdnd-agency.directus.app/items/mh_users')
+
 // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
 // const apiResponseJSON = await apiResponse.json()
+const RadioJSON = await Radio.json()
+const ShowtimeJSON = await Showtime.json()
+const ShowJSON = await Show.json()
+const PresentatorsJSON = await Presentators.json()
 
 // Controleer eventueel de data in je console
 // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(apiResponseJSON)
+console.log(RadioJSON)
+console.log(ShowtimeJSON)
+console.log(ShowJSON)
+console.log(PresentatorsJSON)
 
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
@@ -36,13 +51,10 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
-const RadioResponse = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations/?sort=id')
-
-const RadioResponseJSON = await RadioResponse.json()
 
    // Render index.liquid uit de Views map
    // Geef hier eventueel data aan mee
-   response.render('homepage.liquid', {stations: RadioResponseJSON.data} )
+   response.render('homepage.liquid', {stations: RadioJSON.data} )
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
