@@ -1,17 +1,36 @@
 {% render 'partials/head.liquid' %}
 
 <header>
-    <h1>veronica</h1>
+    <img src="/veronica-logo.svg">
 </header>
 
-<section>
+<section class="hoofd-nav">
+    <nav>
+        <ul>
+            <li><a href="#">progammering</a></li>
+            <li><a href="#">DJ's</a></li>
+            <li><a href="#">playlist</a></li>
+        </ul>
+    </nav>
+
+
+</section>
+
+<section class="programma-sec">
 
 {% for person in persons %}
-
-    <h2>{{ person.full_name }}</h2>
+    <article class="programma">
+        <h2>{{ person.full_name }}</h2>
+        <img src="{{ person.cover }}">
+    </article>
     
 {% endfor %}
 
+{% for show in shows %}
+
+    <h2>{{ show.radiostation }}</h2>
+
+{% endfor %}
 </section>
 
 
