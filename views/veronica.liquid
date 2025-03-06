@@ -1,7 +1,7 @@
 {% render 'partials/head.liquid' %}
 
 <header class="veronica-header">
-    <img src="/veronica-logo.svg">
+    <img src="/veronica-logo.svg" alt="veronica logo">
 </header>
 
 <section class="hoofd-nav">
@@ -23,23 +23,28 @@
 
         <h2>{{ show.radiostation }} {{ show.name }}</h2>
         <p> {{ show.body }} </p>
+        <p> {{ show.users }} </p>
 
         {% endfor %}
 
-        {% comment %} {% for show in shows, for person in persons %}
+         {% comment %} {% for show in shows, for person in persons %} {% endcomment %}
 
-            <h2>{{ show.radiostation }} {{ show.name }}</h2>
-            <p> {{ show.body }} </p>
-            <h3>{{ person.full_name }}</h3>
-            <img src="{{ person.cover }}"> {% endcomment %}
+            {% comment %} <h2>{{ show.radiostation }} {{ show.name }}</h2> {% endcomment %}
+            {% comment %} <p> {{ show.body }} </p> {% endcomment %}
+            {% comment %} <h3>{{ person.full_name }}</h3> {% endcomment %}
+            {% comment %} <img src="{{ person.cover }}"> {% endcomment %} 
 
-        {% comment %} {% for person in persons %}
+        {% comment %} {% for person in persons %} {% endcomment %}
     
-        <h4>{{ person.full_name }}</h4>
-        <img src="{{ person.cover }}">
+        {% comment %} <h4>{{ person.full_name }}</h4> {% endcomment %}
+        {% comment %} <img src="{{ person.cover }}"> {% endcomment %}
 
+        {% comment %} {% endfor %}  {% endcomment %}
+
+        </article>
+        {% comment %} {% for tijd in tijden %}
+            <p> {{ tijd.from }} {{ tijd.until }} </p>
         {% endfor %} {% endcomment %}
-    </article>
 </section>
 
 

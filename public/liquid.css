@@ -5,6 +5,15 @@ body {
 
 .mediahuis-header {
 
+    display: flex;
+    align-items: center;
+    margin-bottom: 200px;
+    
+    div {
+        width: 80%;
+        height: 100px;
+        background-color: orange;
+    }
 }
 
 .radiostations {

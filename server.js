@@ -73,7 +73,7 @@ app.get('/veronica', async function (request, response) {
 
   const ShowVeronicaJSON = await ShowVeronica.json()
 
-  response.render('veronica.liquid', {persons: PresentatorsJSON.data, shows: ShowVeronicaJSON.data} )
+  response.render('veronica.liquid', {persons: PresentatorsJSON.data, shows: ShowVeronicaJSON.data, tijden: ShowtimeJSON.data} )
 })
 
 app.post('/', async function (request, response) {
