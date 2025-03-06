@@ -1,1 +1,23 @@
+{% render 'partials/head.liquid' %}
+
+<header>
+    <h1>veronica</h1>
+</header>
+
+<section>
+
+{% for person in persons %}
+
+    <h2>{{ person.full_name }}</h2>
+    
+{% endfor %}
+
+</section>
+
+
+
+
+
 <a href="/">back</a>
+
+{% render 'partials/foot.liquid' %}
