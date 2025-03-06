@@ -69,7 +69,15 @@ app.post('/', async function (request, response) {
 
 app.get('/veronica', async function (request, response) {
 
-  response.render('veronica.liquid', {persons: PresentatorsJSON.data} )
+  const ShowVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_show/?sort=radiostation')
+
+  const ShowVeronicaJSON = await ShowVeronica.json()
+  console.log(ShowVeronicaJSON)
+
+
+
+
+  response.render('veronica.liquid', {persons: PresentatorsJSON.data, shows: ShowVeronicaJSON.data} )
 })
 
 app.post('/', async function (request, response) {
