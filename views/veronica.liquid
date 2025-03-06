@@ -1,6 +1,6 @@
 {% render 'partials/head.liquid' %}
 
-<header>
+<header class="veronica-header">
     <img src="/veronica-logo.svg">
 </header>
 
@@ -17,20 +17,29 @@
 </section>
 
 <section class="programma-sec">
-
-{% for person in persons %}
     <article class="programma">
-        <h2>{{ person.full_name }}</h2>
-        <img src="{{ person.cover }}">
-    </article>
+
+        {% for show in shows %}
+
+        <h2>{{ show.radiostation }} {{ show.name }}</h2>
+        <p> {{ show.body }} </p>
+
+        {% endfor %}
+
+        {% comment %} {% for show in shows, for person in persons %}
+
+            <h2>{{ show.radiostation }} {{ show.name }}</h2>
+            <p> {{ show.body }} </p>
+            <h3>{{ person.full_name }}</h3>
+            <img src="{{ person.cover }}"> {% endcomment %}
+
+        {% comment %} {% for person in persons %}
     
-{% endfor %}
+        <h4>{{ person.full_name }}</h4>
+        <img src="{{ person.cover }}">
 
-{% for show in shows %}
-
-    <h2>{{ show.radiostation }}</h2>
-
-{% endfor %}
+        {% endfor %} {% endcomment %}
+    </article>
 </section>
 
 

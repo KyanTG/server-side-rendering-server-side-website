@@ -6,7 +6,7 @@ import express from 'express'
 import { Liquid } from 'liquidjs';
 
 
-console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
+// console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
 
 
 // Doe een fetch naar de data die je nodig hebt
@@ -24,13 +24,13 @@ const ShowtimeJSON = await Showtime.json()
 const ShowJSON = await Show.json()
 const PresentatorsJSON = await Presentators.json()
 
-// Controleer eventueel de data in je console
-// (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
-// console.log(apiResponseJSON)
-console.log(RadioJSON)
-console.log(ShowtimeJSON)
-console.log(ShowJSON)
-console.log(PresentatorsJSON)
+// // Controleer eventueel de data in je console
+// // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
+// // console.log(apiResponseJSON)
+// console.log(RadioJSON)
+// console.log(ShowtimeJSON)
+// console.log(ShowJSON)
+// console.log(PresentatorsJSON)
 
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
@@ -72,10 +72,6 @@ app.get('/veronica', async function (request, response) {
   const ShowVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_show/?sort=radiostation')
 
   const ShowVeronicaJSON = await ShowVeronica.json()
-  console.log(ShowVeronicaJSON)
-
-
-
 
   response.render('veronica.liquid', {persons: PresentatorsJSON.data, shows: ShowVeronicaJSON.data} )
 })

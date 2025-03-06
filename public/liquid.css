@@ -2,8 +2,31 @@ body {
     margin: 0;
 }
 
-header {
+
+.mediahuis-header {
+
+}
+
+.radiostations {
+    display: flex;
+    justify-content: center;
+
+    img:nth-of-type(1) {
+        background-color: var(--veronica-color-secondary);
+        border: 5px solid var(--veronica-color-secondary);
+        width: 250px;
+    }
+
+}
+.veronica-header {
+    display: flex;
+    justify-content: center;
     background-color: var(--veronica-color-secondary);
+    padding-block: 50px;
+
+    img {
+        width: 250px;
+    }
 }
 
 .programma-sec {
