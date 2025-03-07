@@ -12,17 +12,19 @@ import { Liquid } from 'liquidjs';
 // Doe een fetch naar de data die je nodig hebt
 // const apiResponse = await fetch('...')
 
-const Radio = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations')
-const Showtime = await fetch('https://fdnd-agency.directus.app/items/mh_shows')
-const Show = await fetch('https://fdnd-agency.directus.app/items/mh_show')
-const Presentators = await fetch('https://fdnd-agency.directus.app/items/mh_users')
+// const Algemeen = await fetch ('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*.*')
+// const Radio = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations')
+// const Showtime = await fetch('https://fdnd-agency.directus.app/items/mh_shows')
+// const Show = await fetch('https://fdnd-agency.directus.app/items/mh_show')
+// const Presentators = await fetch('https://fdnd-agency.directus.app/items/mh_users')
 
-// Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-// const apiResponseJSON = await apiResponse.json()
-const RadioJSON = await Radio.json()
-const ShowtimeJSON = await Showtime.json()
-const ShowJSON = await Show.json()
-const PresentatorsJSON = await Presentators.json()
+// // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
+// // const apiResponseJSON = await apiResponse.json()
+// const RadioJSON = await Radio.json()
+// const ShowtimeJSON = await Showtime.json()
+// const ShowJSON = await Show.json()
+// const PresentatorsJSON = await Presentators.json()
+// const AlgemeenJSON = await Algemeen.json()
 
 // // Controleer eventueel de data in je console
 // // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
@@ -64,11 +66,13 @@ app.post('/', async function (request, response) {
 // veronica page
 app.get('/veronica', async function (request, response) {
 
-  const ShowVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_show/?sort=radiostation')
+  const AlgemeenVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*.*')
 
-  const ShowVeronicaJSON = await ShowVeronica.json()
+  const AlgemeenVeronicaJSON = await AlgemeenVeronica.json()
 
-  response.render('veronica.liquid', {persons: PresentatorsJSON.data, shows: ShowVeronicaJSON.data, tijden: ShowtimeJSON.data} )
+  console.log(AlgemeenVeronicaJSON.data)
+
+  response.render('veronica.liquid', {algemeen: AlgemeenVeronicaJSON.data} )
 })
 
 app.post('/', async function (request, response) {
