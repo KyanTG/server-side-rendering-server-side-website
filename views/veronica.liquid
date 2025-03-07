@@ -28,13 +28,13 @@
         {% endfor %} {% endcomment %}
 
         {% for data in algemeen %}
-            <h2>{{ data.show.users[0].mh_users_id.full_name }}</h2>
+            
+            <h2>{{ data.show.name }}</h2>
+            <p>{{ data.show.users[0].mh_users_id.full_name }}</p>
         {% endfor %}
     </article>
 </section>
 
-data: 
-{{data}}
 
 <a class="home" href="/">home</a>
 
