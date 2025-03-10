@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding: 0;
 }
 
 
@@ -34,7 +35,30 @@ body {
     padding-block: 50px;
 
     img {
-        width: 250px;
+        width: 93px;
+    }
+}
+
+.hoofd-nav {
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 32px;
+        list-style: none;
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--veronica-color-main);
+            text-underline-offset: 8px;
+            text-decoration-line: 2px;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -43,6 +67,8 @@ body {
     .programma {
         background-color: var(--veronica-color-main);
         width: 295px;
+
+        
     }
 }
 
