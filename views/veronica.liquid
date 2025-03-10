@@ -12,25 +12,38 @@
             <li><a href="#">playlist</a></li>
         </ul>
     </nav>
+</section>
 
-
+<section class="datum-nav">
+    <nav>
+        <ul>
+            <li>
+                <a></a>
+                <a></a>
+            </li>
+            <li>
+                <a></a>
+                <a></a>
+            </li>
+            <li>
+                <a></a>
+                <a></a>
+            </li>
+        </ul>
+    </nav>
 </section>
 
 <section class="programma-sec">
+    
     <article class="programma">
-
-        {% comment %} {% for show in shows %}
-
-        <h2>{{ show.radiostation }} {{ show.name }}</h2>
-        <p> {{ show.body }} </p>
-        <p> {{ show.users }} </p>
-
-        {% endfor %} {% endcomment %}
-
         {% for data in algemeen %}
-            
             <h2>{{ data.show.name }}</h2>
-            <p>{{ data.show.users[0].mh_users_id.full_name }}</p>
+
+            {% comment %} de loop in de loop zorgt ervoor dat er meerdere data word geladen zonder dat je errays er in hoeft te verwerken {% endcomment %}
+            {% for person in data.show.users %}
+                <p>{{person.mh_users_id.full_name}}</p>
+                <img src="https://fdnd-agency.directus.app/assets/{{ person.mh_users_id.cover }}">
+            {% endfor %}            
         {% endfor %}
     </article>
 </section>
