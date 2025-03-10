@@ -13,26 +13,17 @@ import { Liquid } from 'liquidjs';
 // const apiResponse = await fetch('...')
 
 // const Algemeen = await fetch ('https://fdnd-agency.directus.app/items/mh_shows?fields=*.*.*.*')
-// const Radio = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations')
-// const Showtime = await fetch('https://fdnd-agency.directus.app/items/mh_shows')
-// const Show = await fetch('https://fdnd-agency.directus.app/items/mh_show')
-// const Presentators = await fetch('https://fdnd-agency.directus.app/items/mh_users')
+const Radio = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations')
 
-// // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
-// // const apiResponseJSON = await apiResponse.json()
-// const RadioJSON = await Radio.json()
-// const ShowtimeJSON = await Showtime.json()
-// const ShowJSON = await Show.json()
-// const PresentatorsJSON = await Presentators.json()
+
+
+const RadioJSON = await Radio.json()
 // const AlgemeenJSON = await Algemeen.json()
 
 // // Controleer eventueel de data in je console
 // // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
-// // console.log(apiResponseJSON)
-// console.log(RadioJSON)
-// console.log(ShowtimeJSON)
-// console.log(ShowJSON)
-// console.log(PresentatorsJSON)
+
+console.log(RadioJSON)
 
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
@@ -53,8 +44,11 @@ app.set('views', './views')
 // homepage
 app.get('/', async function (request, response) {
 
+  const Radio = await fetch('https://fdnd-agency.directus.app/items/mh_radiostations')
 
-   response.render('homepage.liquid', {stations: RadioJSON.data} )
+  const RadioJSON = await Radio.json()
+
+response.render('homepage.liquid', {stations: RadioJSON.data} )
 })
 
 app.post('/', async function (request, response) {
@@ -66,7 +60,7 @@ app.post('/', async function (request, response) {
 // veronica page
 app.get('/veronica', async function (request, response) {
 
-  const AlgemeenVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_shows?fields=from,until,show.name,show.body,show.radiostation.name,show.users.mh_users_id.full_name,show.users.mh_users_id.cover&filter=%7B%22show%22:%7B%22radiostation%22:%7B%22name%22:%22Radio%20Veronica%22%7D%7D%7D')
+  const AlgemeenVeronica = await fetch('https://fdnd-agency.directus.app/items/mh_shows?fields=from,until,show.name,show.body,show.radiostation.name,show.users.mh_users_id.full_name,show.users.mh_users_id.cover&filter=%7B%22show%22:%7B%22radiostation%22:%7B%22name%22:%22Radio%20Veronica%22%7D%7D%7D&sort=from')
 
   const AlgemeenVeronicaJSON = await AlgemeenVeronica.json()
 
@@ -77,6 +71,15 @@ app.post('/', async function (request, response) {
 
  response.redirect(303, '/')
 })
+
+// pagina als ie niet werkt
+
+app.use((req, res, next) => {
+  res.status(404).send("/notfound.liquid")
+})
+
+
+
 
 
 
