@@ -53,11 +53,29 @@ body {
             text-decoration: none;
         }
 
-        a:hover {
+        a:hover, a:focus {
             color: var(--veronica-color-main);
             text-underline-offset: 8px;
             text-decoration-line: 2px;
             text-decoration: underline;
+        }
+    }
+}
+
+.datum-nav {
+
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 32px;
+        list-style: none;
+    
+
+        button {
+            display: flex;
+            flex-direction: column;
         }
     }
 }
@@ -68,7 +86,7 @@ body {
         background-color: var(--veronica-color-main);
         width: 295px;
 
-        
+
     }
 }
 
