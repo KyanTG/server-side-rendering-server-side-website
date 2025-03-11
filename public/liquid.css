@@ -1,7 +1,6 @@
 
 
 body {
-    background-color: var(--veronica-color-white);
 
     * {
         margin: 0;
@@ -33,7 +32,7 @@ body {
         height: 240px;
         rotate: -35deg;
         margin-top: -100px;
-        background-color: orange;
+        background-color: #ff3c38;
     }
     
     div:nth-of-type(2) {
@@ -43,7 +42,7 @@ body {
         margin-left: 70px;
         height: 140px;
         overflow: hidden;
-        background-color: orange;
+        background-color: #ff3c38;
     }
 }
 
@@ -57,6 +56,33 @@ body {
         width: 250px;
     }
 
+}
+
+/* notfound page */
+
+.header-notfound {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.notfound {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    a {
+        color: white;
+        background-color: #ff3c38;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 48px;
+    }
 }
 
 /* veronica page */
@@ -115,7 +141,7 @@ body {
             flex-direction: column;
             gap: 8px;
             border: none;
-            background-color: var(--veronica-color-white);
+            background-color: white;
         }
     }
 }

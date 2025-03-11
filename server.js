@@ -75,9 +75,9 @@ app.post('/', async function (request, response) {
 // pagina als ie niet werkt
 
 app.use((req, res, next) => {
-  res.status(404).send("/notfound.liquid")
+  res.status(404).render('notfound.liquid');
 })
-
+  
 
 
 
