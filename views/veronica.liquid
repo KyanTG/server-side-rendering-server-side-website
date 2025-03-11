@@ -64,19 +64,43 @@
 </section>
 
 <section class="programma-sec">
-    
-    <article class="programma">
+
         {% for data in algemeen %}
-            <h2>{{ data.show.name }}</h2>
+            <article class="programma">
+                <div>
+                    <h2>{{ data.show.name }}</h2>
+                    <p class="informatie-show">{{ data.show.body }}</p>
+                </div>
+                <div>
+                    <img src="/Time.svg" alt="tijd">
+                    <p class="artiest-tijd">{{ data.from }} {{ data.until }}</p>
+                </div>
 
             {% comment %} de loop in de loop zorgt ervoor dat er meerdere data word geladen zonder dat je errays er in hoeft te verwerken {% endcomment %}
             {% for person in data.show.users %}
-                <p>{{person.mh_users_id.full_name}}</p>
-                <img src="https://fdnd-agency.directus.app/assets/{{ person.mh_users_id.cover }}">
+                <div>
+                    <img src="/User.svg" alt="gebruiker">
+                    <p class="naam-artiest">{{ person.mh_users_id.full_name }}</p>
+                </div>
+                    <img class="persoon-radio" src="https://fdnd-agency.directus.app/assets/{{ person.mh_users_id.cover }}">
             {% endfor %}            
+            </article>
         {% endfor %}
-    </article>
+
 </section>
+
+<footer>
+    <nav>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">veronica</a></li>
+            <li><a href="#">slam</a></li>
+            <li><a href="#">radio 100nl</a></li>
+
+
+        </ul>
+    </nav>
+</footer>
 
 
 <a class="home" href="/">home</a>
