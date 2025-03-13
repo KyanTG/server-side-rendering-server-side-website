@@ -1,32 +1,27 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+## Triple / Mediahuis
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
-
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+De opdracht was om voor Mediahuis een radiogids te maken, het ( doel ) was om 13 maart 2025 te zorgen dat 1 radiogids af was.
 
 ## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+De website kan je gebruiken als radiogids om live uitzendingen te zien met daarbij de tijden en wie de uitzending host, als je hierop klikt kan je naar de live zender luisteren. ( Dit werkt momenteel nog niet maar dat is wel een doel voor de komende sprints ).
+Ik heb een paar kleine design aanpassingen gedaan aan de Veronica pagina voor Mediahuis die ik heb gemaakt, zo heb ik er wat meer kleur aan toegevoegd om het wat creatiever en uitnodigender te maken. Ik heb tot nu toe een deel van het mobile first design af, dit kwam omdat ik moeite had met de juiste informatie uit de diverse databases te halen en deze te verwerken in 1 database.
+
+
+# Mobile first:
+
+
+https://github.com/user-attachments/assets/0f191097-3b4e-4688-bf1f-d2d0513e7157
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+# Liquid
 
-## Bronnen
+Als eerst heb ik natuurlijk ervoor gezorgd dat mijn HTML Semantisch is ingericht en dat ik de juiste elementen heb gebruikt in mijn code. Ik heb daarna gebruik gemaakt van een % Loop zodat de Articles met de juiste data automatisch worden ingeladen, dit is mijn code daarvoor:
+
+https://github.com/KyanTG/server-side-rendering-server-side-website/blob/8de233ed02c456e4bdedac13e0269540d483fab2/views/veronica.liquid#L66-L91
+
+
 
 ## Licentie
 
