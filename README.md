@@ -15,11 +15,23 @@ https://github.com/user-attachments/assets/0f191097-3b4e-4688-bf1f-d2d0513e7157
 
 ## Kenmerken
 
-# Liquid
+# Liquid / HTML
 
-Als eerst heb ik natuurlijk ervoor gezorgd dat mijn HTML Semantisch is ingericht en dat ik de juiste elementen heb gebruikt in mijn code. Ik heb daarna gebruik gemaakt van een % Loop zodat de Articles met de juiste data automatisch worden ingeladen, dit is mijn code daarvoor:
+Als eerst heb ik natuurlijk ervoor gezorgd dat mijn HTML Semantisch is ingericht en dat ik de juiste elementen heb gebruikt in mijn code. Ik heb daarna gebruik gemaakt van een % Loop zodat de Articles met de juiste data automatisch worden ingeladen en zovaak worden gerepeat zoals nodig is. Code Voorbeeld:
 
 https://github.com/KyanTG/server-side-rendering-server-side-website/blob/8de233ed02c456e4bdedac13e0269540d483fab2/views/veronica.liquid#L66-L91
+
+# CSS
+
+In CSS heb ik er voor gezorgd dat alles op de volgorde van de HTML ingedeeld is en daarbij heb ik ervoor gezorgd dat alles netjes genest is zodat de code optimaal werkt en overzichtelijk blijft. Code voorbeeld:
+
+https://github.com/KyanTG/server-side-rendering-server-side-website/blob/edd1eb889de30ed72115d457d603875d44348a1d/public/liquid.css#L147-L225
+
+# Express / Javascript
+
+In JS heb ik ervoor gezorgd dat de ( JSON ) database opgehaald kan worden en deze verwerkt kan worden in liquid, ook heb ik via hier de verschillende get en post routes aangemaakt zodat er verschillende paginas zijn. Code voorbeeld:
+
+https://github.com/KyanTG/server-side-rendering-server-side-website/blob/edd1eb889de30ed72115d457d603875d44348a1d/server.js#L45-L57
 
 
 
