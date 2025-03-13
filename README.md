@@ -33,6 +33,10 @@ In JS heb ik ervoor gezorgd dat de ( JSON ) database opgehaald kan worden en dez
 
 https://github.com/KyanTG/server-side-rendering-server-side-website/blob/edd1eb889de30ed72115d457d603875d44348a1d/server.js#L45-L57
 
+https://github.com/KyanTG/server-side-rendering-server-side-website/blob/edd1eb889de30ed72115d457d603875d44348a1d/server.js#L60-L73
+
+De verschillende app gets en response render zijn bedoeld om de verschillende pagina's aan te maken en naar door te linken
+
 
 
 ## Licentie
